@@ -1,0 +1,154 @@
+html:
+<div class="services">
+      <h1>Quelques informations sur mes projets</h1>
+      <div class="servicescontainer">
+        <div class="servicescard">
+          <div class="servimg">
+            <img src="images/pic_code.svg" alt="someone sitting in front of a computer" class="sectionimg">
+          </div>
+          <h2>Veille technologique</h2>
+          <p>Les méthodes d'apprentissage des intelligences artificielles</p>
+          <button><a href="/tech.html" class="sectionlink">Get Started</a></button>
+        </div>
+        <div class="servicescard">
+          <div class="servimg">
+            <img src="images/pic_comp.svg" alt="stylised image of a network" class="sectionimg">
+          </div>
+          <h2>Mes compétences</h2>
+          <p>Développement, cybersécurité, réseau, ...</p>
+          <button><a href="/Exp-pro.html" class="section__link">Get Started</a></button>
+        </div>
+      </div>
+    </div>
+css:
+/* Services Section */
+  .services {
+    background: #0a0003;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .services h1 {
+    background-color: #ffefee;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+  }
+
+  .servicescontainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .servicescard {
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    border-radius: 4px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17, 17, 17, 0.6) 100%
+      ),
+      url('/images/pic3.jpg');
+    background-size: cover;
+    position: relative;
+    color: #fff;
+  }
+
+  .servicescard:before {
+    opacity: 0.2;
+  }
+
+  .servicescard:nth-child(2) {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17, 17, 17, 0.9) 100%
+      ),
+      url('/images/pic4.jpg');
+  }
+
+  .servicescard h2 {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+  }
+
+  .servicescard p {
+    position: absolute;
+    top: 400px;
+    left: 30px;
+  }
+
+  .servicescard button {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #b31b1b;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+  }
+
+  .servicescard button:hover {
+    cursor: pointer;
+    background: #850101;
+    transition: all 0.5s ease;
+  }
+
+  .services__card:hover {
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+    cursor: pointer;
+  }
+
+-------------------------------------------
+old footer
+
+<div>
+  <div>
+      <a href='informations.php' class='image-link'>
+          <img src='https://i.ibb.co/1nD9WGc/new-the-book.png' alt='livre'>
+          <span>À propos de nous</span>
+      </a> |
+      <a href='index.php' class='image-link'>
+          <img src='https://i.ibb.co/jHTzZ5g/new-the-house.png'/>
+          <span>Accueil</span>
+      </a> |
+      <a href='index.php' class='image-link'>
+          <img src='https://i.ibb.co/8jhnBGX/new-the-mail.png'/>
+          <span>Contact</span>
+      </a> |
+      <a href='nos_actions.php' class='image-link'>
+          <img src='https://i.ibb.co/mF88ccK/new-people.png' alt='livre'>
+          <span>Nos Actions</span>
+      </a>
+  </div>
+</div>
+
+echo "
+<style>
+    .image-link {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: #000; /* Set the color you want for the text */
+    }
+
+    .image-link span {
+        display: block;
+        margin-top: 5px; /* You can adjust the margin as needed */
+    }
+</style>";
