@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenEduc - Accueil</title>
     <link href="style.css" rel="stylesheet"></link>
-    <!-- Inclure vos styles CSS ici -->
-    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-<?php include('header.php')?>
+<?php 
+    include('header.php');
+?>
 <body>
     <main>
         <section>
-            <a href="connexion.php"><h1>Test Dev</h1></a>
             <h2>À propos de nous</h2>
             <p>OpenEduc facilite la collecte d'informations sur les écoles, permettant une participation active de l'APEA.</p>
         </section>
@@ -25,13 +24,22 @@
                 <li>Historique des saisies pour la traçabilité</li>
                 <li>Affichage public des informations par école</li>
             </ul>
-        </section>
-        <section>
-            <h2>Commencez dès maintenant</h2>
-            <p>Connectez-vous pour accéder à votre espace personnel ou inscrivez-vous si vous êtes nouveau.</p>
-            <button><a href="login.php">Connexion</a></button>
-            <button><a href="register.php">Inscription</a></button>
-        </section>
+            <section>
+    <h2>Commencez dès maintenant</h2>
+    <?php if (isset($_SESSION['user_firstname'])) : ?>
+        <!-- Bouton de déconnexion aligné à droite -->
+        <form action="logout.php" method="post" class="logout-form">
+        <button type="submit" name="logout">Déconnexion</button>
+        </form>
+    <?php else : ?>
+        <!-- Boutons de connexion et d'inscription -->
+        <form>
+        <button><a href="login.php">Connexion</a></button>
+        <button><a href="register.php">Inscription</a></button>
+    </form>
+    <?php endif; ?>
+</section>
+
     </main>
 </body>
 <?php include('footer.php')?>

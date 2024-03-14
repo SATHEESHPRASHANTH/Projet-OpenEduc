@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
@@ -49,11 +50,46 @@ button {
     color: #fff;
     padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 button a {
   text-decoration: none;
   color: #fff;
+  padding: 10px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: row;
+}
+
+form label, form input {
+    margin-bottom: 10px;
+}
+
+form button {
+    align-self: flex-end;
+}
+
+form button {
+  margin-right: 10px; /* Ajoutez l'espacement désiré entre les boutons */
+}
+
+.edit-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-title{
+  align-self: center;
 }

@@ -48,7 +48,8 @@
 </head>
 <?php include('header.php')?>
 <body>
-    <main>
+    <div>
+        <main>
 <?php
 // Supposons que $result soit le résultat de votre requête SQL
 $result = [
@@ -79,7 +80,25 @@ if (!empty($result)) {
     echo '<p class="library-container">Aucun livre trouvé.</p>';
 }
 ?>
-</main>
+        </main>
+</div>
+    <div class="modif">
+        <main >
+            <h2>Édition du contenu</h2>
+            <div class="edit-container">
+                <h3>Ajout d'action:</h3>
+                Nom de l'action : <input type="text" class="edit-input" placeholder="Zone de texte 1"></br/>
+                description de l'action : <input type="text" class="edit-input" placeholder="Zone de texte 2">
+                <button class="edit-button">Bouton</button>
+            </div>
+            <div class="edit-container">
+                <h3>Suppression d'action</h3>
+                num de l'action : <input type="text" class="edit-input" placeholder="Zone de texte 1">
+                <button class="edit-button">Bouton</button>
+            </div>
+        </main>
+    </div>
+
 </body>
 <?php include('footer.php')?>
 </html>

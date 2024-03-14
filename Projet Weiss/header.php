@@ -1,6 +1,11 @@
-<?php 
-  echo "
-  <style>
+<?php
+session_start();
+$user_firstname = isset($_SESSION['user_firstname']) ? $_SESSION['user_firstname'] : '';
+$user_lastname = isset($_SESSION['user_lastname']) ? $_SESSION['user_lastname'] : '';
+$user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : '';
+$user_school = isset($_SESSION['user_school']) ? $_SESSION['user_school'] : '';
+?>
+<style>
   .image-link {
     display: inline-block;
     text-align: center;
@@ -57,20 +62,30 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      padding: 0 1rem;
-      height: 100%;
     }
     .navbarlinks:hover {
       color: #b31b1b;
       transition: all 0.3s ease;
     }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      margin-right: 20px; /* Ajoutez une marge à droite pour l'espace */
+  }
+  
+  #user-firstname,
+  #user-lastname {
+      margin-right: 10px; /* Ajoutez une marge entre le prénom et le nom si nécessaire */
+  }
   </style>
   <header>
   <h1>OpenEduc</h1>
   <nav class='navbar'>
       <div class='navbarcontainer'>
+          <span class='bar' id='user-firstname'><?php echo $user_firstname; ?></span> <span class='bar' id='user-lastname'><?php echo $user_lastname; ?></span>
           <span class='bar'></span> <span class='bar'></span>
-          <span class='bar'></span>
         </div>
         <ul class='navbarmenu'>
           <li class='navbaritem'>
@@ -95,6 +110,13 @@
           </li>
           <p>|</p>
           <li class='navbaritem'>
+          <a href='nos_ecoles.php' class='image-link'>
+          <img src='https://i.ibb.co/px3NzGY/school-education-learning-classroom-study-svgrepo-com-1-1.png'/>
+          <span class='navbarlinks'>Nos Écoles</span>
+      </a>
+          </li>
+          <p>|</p>
+          <li class='navbaritem'>
           <a href='index.php' class='image-link'>
           <img src='https://i.ibb.co/8jhnBGX/new-the-mail.png'/>
           <span class='navbarlinks'>Contact</span>
@@ -102,5 +124,4 @@
         </ul>
       </div>
     </nav>
-</header>";
-?>
+</header>
