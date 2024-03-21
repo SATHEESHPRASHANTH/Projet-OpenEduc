@@ -30,12 +30,16 @@
         <!-- Bouton de déconnexion aligné à droite -->
         <form action="logout.php" method="post" class="logout-form">
         <button type="submit" name="logout">Déconnexion</button>
+        <?php
+        if($user_role==1){
+        echo'<button><a href="register.php">Inscription</a></button>';
+        };
+        ?>
         </form>
     <?php else : ?>
         <!-- Boutons de connexion et d'inscription -->
         <form>
         <button><a href="login.php">Connexion</a></button>
-        <button><a href="register.php">Inscription</a></button>
     </form>
     <?php endif; ?>
 </section>

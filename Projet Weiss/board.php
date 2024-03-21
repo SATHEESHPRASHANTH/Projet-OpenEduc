@@ -8,6 +8,8 @@
 </head>
 <?php include('header.php');?>
 <body>
+    <a href="">modifer mon profil</a>
+    
     gooood
 </body>
 <?php include('footer.php');

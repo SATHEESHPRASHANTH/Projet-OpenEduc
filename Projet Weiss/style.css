@@ -93,3 +93,8 @@ form button {
 .edit-title{
   align-self: center;
 }
+
+.titre{
+  color:rgb(0, 0, 0);
+  text-align: center;
+}

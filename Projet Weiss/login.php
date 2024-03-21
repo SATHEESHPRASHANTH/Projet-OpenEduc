@@ -30,11 +30,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
         
             // Enregistrer les informations de l'utilisateur dans la session
-            $_SESSION['user_firstname'] = $db_nom;
-            $_SESSION['user_lastname'] = $db_prenom;
-            $_SESSION['user_role'] = $db_role;
-            $_SESSION['user_school'] = $db_school;
-        
+            $user_firstname = isset($_SESSION['user_firstname']) ? $_SESSION['user_firstname'] : '';
+            $user_lastname = isset($_SESSION['user_lastname']) ? $_SESSION['user_lastname'] : '';
+            $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : '';
+            $user_school = isset($_SESSION['user_school']) ? $_SESSION['user_school'] : '';
+            $roleSTR = "";
+            $schoolSTR = "";
+// Récupérer le nom de l'établissement en fonction de l'ID de l'établissement
+        if (!empty($user_school)) {
+            $get_school_query = "SELECT nomEtablissement FROM etablissement WHERE id_etablissement = ?";
+            $stmt = $connexion->prepare($get_school_query);
+            $stmt->bind_param("i", $user_school);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $schoolSTR = $row['nomEtablissement'];
+    }
+}
+
+// Récupérer le nom du rôle en fonction de l'ID du rôle
+if (!empty($user_role)) {
+    $get_role_query = "SELECT nom_role FROM role WHERE id_role = ?";
+    $stmt = $connexion->prepare($get_role_query);
+    $stmt->bind_param("i", $user_role);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $roleSTR = $row['nom_role'];
+    }
+}
+$_SESSION['user_firstname'] = $db_nom; // Assurez-vous que vous avez le nom correct dans $db_nom
+$_SESSION['user_lastname'] = $db_prenom; // Assurez-vous que vous avez le prénom correct dans $db_prenom
+$_SESSION['user_role'] = $db_role; // Assurez-vous que vous avez le rôle correct dans $db_role
+$_SESSION['user_school'] = $db_school; // Assurez-vous que vous avez l'école correcte dans $db_school
+
             // Redirection vers la page board.php
             header("Location: board.php");
             exit(); // Assurez-vous d'ajouter exit() après la redirection pour arrêter l'exécution du script immédiatement
