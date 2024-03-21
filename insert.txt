@@ -1,7 +1,7 @@
 INSERT INTO Role VALUES (1, 'Membre APEA');
 INSERT INTO Role VALUES (2, 'Représentant APEA');
 INSERT INTO Role VALUES (3, 'Représentant mairie');
-INSERT INTO Role VALUES (4, 'Directeur d''établissement');
+INSERT INTO Role VALUES (4, 'Directeur d\'établissement');
 INSERT INTO Role VALUES (5, 'Secrétaire général APEA');
 INSERT INTO Role VALUES (6, 'admin');
 
@@ -36,13 +36,13 @@ INSERT INTO Niveau VALUES (3, 'CE2');
 INSERT INTO Niveau VALUES (4, 'CM1');
 INSERT INTO Niveau VALUES (5, 'CM2');
 
-INSERT INTO Evenement VALUES (1, 'Achat de livre groupé', 'L''APEA organise des achats de livres pour les établissements qui en expriment le besoin. Cela peut inclure des livres de cours pour plusieurs classes, des dictionnaires qui seront assignés à des salles de classes ou encore des livres pour le CDI de l''école.');
-INSERT INTO Evenement VALUES (2, 'Organisation de voyages scolaires', 'L''APEA aide les établissements à organiser des voyages scolaires, que ce soit en plein air, des voyages d''intégrations, des stages de sport d'une semaine ou encore des voyages dans le cadre de certaines matières.');
-INSERT INTO Evenement VALUES (3, 'Organisation de manifestations avec intervenants extérieurs', 'L''APEA permet aux établissements d'organiser des évènements avec des intervenants extérieurs, tels que des après midi sur le thème de la sécurité routière, des présentations de certains aspects des forces de l''ordre ou encore des présentations de différents métiers aux élèves.');
+INSERT INTO Evenement VALUES (1, 'Achat de livre groupé', 'L\'APEA organise des achats de livres pour les établissements qui en expriment le besoin. Cela peut inclure des livres de cours pour plusieurs classes, des dictionnaires qui seront assignés à des salles de classes ou encore des livres pour le CDI de l\'école.');
+INSERT INTO Evenement VALUES (2, 'Organisation de voyages scolaires', 'L\'APEA aide les établissements à organiser des voyages scolaires, que ce soit en plein air, des voyages d\'intégrations, des stages de sport d'une semaine ou encore des voyages dans le cadre de certaines matières.');
+INSERT INTO Evenement VALUES (3, 'Organisation de manifestations avec intervenants extérieurs', 'L\'APEA permet aux établissements d'organiser des évènements avec des intervenants extérieurs, tels que des après midi sur le thème de la sécurité routière, des présentations de certains aspects des forces de l\'ordre ou encore des présentations de différents métiers aux élèves.');
 
 INSERT INTO Etablissement VALUES (1, 'Ecole primaire publique des fontaines', 5, '2 rue des Ecoles', 67870, 0388502124, 'ce.0671236E@ac-strasbourg.fr', '1');
 INSERT INTO Etablissement VALUES (2, 'Ecole elementaire publique Charles Spindler', 5, '21 rue Mgr Médard Barth', 67530, 0388481337, 'ce.0671238G@ac-strasbourg.fr', '2');
-INSERT INTO Etablissement VALUES (3, 'Ecole elementaire publique groupe scolaire du Rosenmeer', 13, '11 rue de l'Eglise', 67560, 0388481337, 'ce.0672868D@ac-strasbourg.fr', '1/3');
+INSERT INTO Etablissement VALUES (3, 'Ecole elementaire publique groupe scolaire du Rosenmeer', 13, '11 rue de l\'Eglise', 67560, 0388481337, 'ce.0672868D@ac-strasbourg.fr', '1/3');
 
 INSERT INTO Classe VALUES ('CP Mme Borleau', '1', 20, '1', 1);
 INSERT INTO Classe VALUES ('CE1/CE2 Mme Hetre', '2/3', 32, '2', 1);
