@@ -119,7 +119,7 @@ if($user_firstname!=NULL)
   }
   </style>
   <header>
-  <h1>OpenEduc</h1>
+  <h1><img src="https://i.ibb.co/jvJV7cX/logo-open-educ-true.png"></h1>
   <nav class='navbar'>
       <div class='navbarcontainer'>
           <span class='bar' id='user-firstname'><?php echo $user_firstname; ?></span> <span class='bar' id='user-lastname'><?php echo $user_lastname; ?></span>
