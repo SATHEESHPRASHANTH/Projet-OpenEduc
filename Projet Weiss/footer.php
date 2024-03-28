@@ -5,6 +5,9 @@ echo "<style>footer {
     background-color: #3498db;
     color: #fff;
     flex-shrink: 0; /* Empêche le footer de réduire la taille de l'écran */
+    bottom:0;
+    position: fixed;
+    width: 100%;
   }
 </style>
 <footer class='footer' style=>

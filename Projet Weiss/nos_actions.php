@@ -73,7 +73,7 @@ $connexion->close();
     <style>
         /* Ajoutez le style spécifique au tableau ici */
         .library-container {
-            width: 80%;
+            width: 100%;
             margin: 20px auto;
             display: flex;
             flex-wrap: wrap;
@@ -103,6 +103,11 @@ $connexion->close();
             border-radius: 5px;
             padding: 5px;
             margin-top: 5px;
+            text-align: center;
+        }
+
+        .book-details{
+            text-align: center;
         }
 
         .book-author {
@@ -155,7 +160,7 @@ $connexion->close();
         </main>
     </div>
     <?php
-    if($user_role==1){
+    if($user_role==6){
         echo'<div class="modif">';
         echo'<main>';
         echo'<h2 class="edit-title">Édition du contenu</h2>';

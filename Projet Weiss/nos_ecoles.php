@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['supprimerButton'])) {
 }
 
 // Récupération des établissements
-$sql = "SELECT nomEtablissement,adresse,codePostale,numTel,email,id_evenement FROM etablissement";
+$sql = "SELECT nomEtablissement,adresse,codePostale,numTel,email FROM etablissement WHERE id_etablissement==";
 $result = $connexion->query($sql);
 
 // Vérification s'il y a des résultats
@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
 
     // Récupération des données et stockage dans la variable $etablissements
     while($row = $result->fetch_assoc()) {
-        $etablissements[] = array($row["nomEtablissement"], $row["adresse"],$row["codePostale"],$row["numTel"],$row["email"],$row['id_evenement']);
+        $etablissements[] = array($row["nomEtablissement"], $row["adresse"],$row["codePostale"],$row["numTel"],$row["email"], 'bla');
     }
 } else {
     //echo '<p class="library-container">Aucun établissement trouvé.</p>';
@@ -73,11 +73,11 @@ $connexion->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Nos écoles</title>
     <style>
         /* Ajoutez le style spécifique au tableau ici */
         .library-container {
-            width: 80%;
+            width: 100%;
             margin: 20px auto;
             display: flex;
             flex-wrap: wrap;
@@ -107,6 +107,11 @@ $connexion->close();
             border-radius: 5px;
             padding: 5px;
             margin-top: 5px;
+            text-align: center;
+        }
+
+        .book-details{
+            text-align: center;
         }
 
         .book-author {
@@ -157,7 +162,7 @@ $connexion->close();
                         echo '<div class="book-details">Code Postal: ' . $etablissement[2] . '</div>';
                         echo '<div class="book-details">Téléphone: ' . $etablissement[3] . '</div>';
                         echo '<div class="book-details">Email: ' . $etablissement[4] . '</div>';
-                        if($user_role==1){
+                        if($user_role==6){
                             echo'<div class="book-details">id evenement: ' . $etablissement[5] .'</div>';
                         }
                         echo '</div>';
@@ -174,7 +179,7 @@ $connexion->close();
     <div>
                 <?php
                 // Affichage de la section d'édition uniquement si le rôle de l'utilisateur est égal à 1
-                if ($user_role == 1) {
+                if ($user_role == 6) {
                     echo'<main>';
                     echo'<div class="modif">';
                     echo '<h2 class="edit-title">Édition du contenu</h2>';
