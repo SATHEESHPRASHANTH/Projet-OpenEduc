@@ -1,0 +1,167 @@
+/* Réinitialisation des styles pour une base propre */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  max-width: 800px;
+  min-height: 10vh;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #3498db;
+}
+
+ul {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: row;
+}
+
+form label, form input {
+    margin-bottom: 10px;
+}
+
+form button {
+    align-self: flex-end;
+}
+
+form button {
+  margin-right: 10px; /* Ajoutez l'espacement désiré entre les boutons */
+}
+
+.edit-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-title{
+  align-self: center;
+}
+
+.titre{
+  color:rgb(0, 0, 0);
+  text-align: center;
+}
+
+.custom-form {
+  margin: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  /* Ajoutez d'autres styles personnalisés si nécessaire */
+}
+
+/* Ajoutez le style spécifique au tableau ici */
+.library-container {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.book {
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  width: calc(33.33% - 20px); /* 3 éléments par ligne avec un espace de 20px entre eux */
+  box-sizing: border-box;
+}
+
+.book-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-title, .book-author {
+  font-size: 18px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.book-author {
+  font-style: italic;
+  color: #555;
+}
+.custom-form {
+  margin: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  /* Ajoutez d'autres styles personnalisés si nécessaire */
+}
+
+.edit-title {
+  text-align: center;
+}
+
+.edit-button {
+  display: flex;
+  justify-content: center;
+  display: block; /* Afficher le bouton en tant que bloc */
+  margin: 0 auto; /* Marges automatiques à gauche et à droite pour centrer le bouton horizontalement */
+  width: 150px; /* Définir une largeur fixe pour le bouton */
+  /* Ajoutez d'autres styles personnalisés si nécessaire */
+}
