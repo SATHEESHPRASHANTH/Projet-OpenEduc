@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['supprimerButton'])) {
 }
 
 // Récupération des établissements
-$sql = "SELECT nomEtablissement,adresse,codePostale,numTel,email FROM etablissement WHERE id_etablissement==";
+$sql = "SELECT nomEtablissement,adresse,codePostale,numTel,email,id_etablissement FROM etablissement";
 $result = $connexion->query($sql);
 
 // Vérification s'il y a des résultats
@@ -162,9 +162,6 @@ $connexion->close();
                         echo '<div class="book-details">Code Postal: ' . $etablissement[2] . '</div>';
                         echo '<div class="book-details">Téléphone: ' . $etablissement[3] . '</div>';
                         echo '<div class="book-details">Email: ' . $etablissement[4] . '</div>';
-                        if($user_role==6){
-                            echo'<div class="book-details">id evenement: ' . $etablissement[5] .'</div>';
-                        }
                         echo '</div>';
                         echo '</div>';
                     }

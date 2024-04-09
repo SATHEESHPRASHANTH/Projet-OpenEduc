@@ -4,6 +4,7 @@ $user_firstname = isset($_SESSION['user_firstname']) ? $_SESSION['user_firstname
 $user_lastname = isset($_SESSION['user_lastname']) ? $_SESSION['user_lastname'] : '';
 $user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : '';
 $user_school = isset($_SESSION['user_school']) ? $_SESSION['user_school'] : '';
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
 $roleSTR="";
 $schoolSTR="";
 if($user_school==NULL && $user_firstname!=NULL){
@@ -36,7 +37,6 @@ if($user_role != null){
       $roleSTR = $row['nom_role'];
   }
 }
-if($user_firstname!=NULL)
 ?>
 <style>
   .image-link {
@@ -65,22 +65,24 @@ if($user_firstname!=NULL)
     z-index: 999;
   }
   
+  .bar{
+    font-size: 20px;
+  }
   .navbarcontainer {
     display: grid;
     justify-content: space-between;
-    height: 80px;
+    height: 100px;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 50px;
-    padding-left: 50px;
-
+    padding-right: 20px;
+    padding-left: 40px;
     display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Crée une grille avec 4 colonnes de largeur égale */
-  grid-gap: 10px; /* Ajoute un espace entre les colonnes */
-  align-items: center; /* Aligne les éléments au centre verticalement */
+    grid-template-columns: repeat(2, 1fr); /* Crée une grille avec 4 colonnes de largeur égale */
+    grid-gap: 10px; /* Ajoute un espace entre les colonnes */
+    align-items: center;  /*Aligne les éléments au centre verticalement */
   }
   
     .navbarmenu {
@@ -112,11 +114,7 @@ if($user_firstname!=NULL)
       color: #fff;
       margin-right: 20px; /* Ajoutez une marge à droite pour l'espace */
   }
-  
-  #user-firstname,
-  #user-lastname {
-      margin-right: 10px; /* Ajoutez une marge entre le prénom et le nom si nécessaire */
-  }
+
   </style>
   <header>
   <nav class='navbar'>
@@ -129,11 +127,8 @@ if($user_firstname!=NULL)
       <p>|</p>
     
       <div class='navbarcontainer'>
-          <span class='bar' id='user-firstname'><?php echo $user_firstname; ?></span> <span class='bar' id='user-lastname'><?php echo $user_lastname; ?></span>
-          <span class='bar'></span> <span class='bar'></span>
-          <span class='bar' id='user_school'><?php echo $schoolSTR; ?></span> <span class='bar' id='user-role'><?php echo $roleSTR; ?></span>
-          <span class='bar'></span> <span class='bar'></span>
-        </div>
+        <span class='bar' id='user_school'><?php echo $schoolSTR; ?></span> <span class='bar' id='user-role'><?php echo $roleSTR; ?></span>
+      </div>
         <ul class='navbarmenu'>
           <?php
           if($user_firstname!=NULL){

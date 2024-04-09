@@ -7,10 +7,17 @@
     <link href="style.css" rel="stylesheet">
     <style>
         /* Ajoutez le style spécifique aux événements ici */
+
+        h2{
+            text-align: center;
+        }
+
         .event-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
+            padding-right: 20px;
+            padding-left: 20px;
         }
         
         .event {
@@ -34,7 +41,8 @@
 </head>
 <?php include('header.php');?>
 <body>
-    <a href="profil.php">Modifier mon profil</a>
+    <h1>Connecté: <?php echo $user_lastname; echo " "; echo $user_firstname?></h1>
+    <!--<a href="profil.php">Modifier mon profil</a>-->
 
     <h2>Événements</h2>
     <?php
@@ -51,11 +59,10 @@
         echo "<p>Vous n'avez pas d'école, vous ne pouvez voir d'évènement.</p>";
     } else {
         // Récupérer les événements depuis la base de données
-        $get_events_query = "SELECT nom_evenement, description 
-                     FROM evenement 
-                     WHERE id_evenement = (SELECT id_evenement 
-                                            FROM etablissement 
-                                            WHERE id_etablissement = $user_school)";
+        $get_events_query = "SELECT DISTINCT nom_evenement, description 
+                     FROM evenement
+                     INNER JOIN etablissement_evenement
+                     WHERE id_etablissement=$user_school";
         $events_result = $connexion->query($get_events_query);
 
         // Vérifier s'il y a des événements à afficher
@@ -73,7 +80,17 @@
             echo '<p>Aucun événement à afficher pour le moment.</p>';
         }
     }
-
+    ?>
+        <!--Bouton de déconnexion aligné à droite-->
+        <form action="logout.php" method="post" class="logout-form">
+        <button type="submit" name="logout">Déconnexion</button>
+        <?php
+        if($user_role==6){
+        echo'<button><a href="register.php">Inscription</a></button>';
+        };
+        ?>
+        </form>
+    <?php
     // Fermer la connexion à la base de données
     $connexion->close();
     ?>

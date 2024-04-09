@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Vérifier si le mot de passe correspond
         if (password_verify($password, $db_password)) {
+
             // L'utilisateur est authentifié
             session_start();
         

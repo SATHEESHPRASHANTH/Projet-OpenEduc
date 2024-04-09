@@ -31,7 +31,7 @@
         <form action="logout.php" method="post" class="logout-form">
         <button type="submit" name="logout">Déconnexion</button>
         <?php
-        if($user_role==1){
+        if($user_role==6){
         echo'<button><a href="register.php">Inscription</a></button>';
         };
         ?>
